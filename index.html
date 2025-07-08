@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound Buttons</title>
+    <style>
+        @font-face {
+            font-family: 'Comfortaa';
+            src: url('https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/comfortaa.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            border: none;
+            background: none;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .button img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.2s;
+        }
+
+        .button img:hover {
+            transform: scale(1.1);
+        }
+
+        .lancer img {
+            border-radius: 50%;
+        }
+
+        .footer-text {
+            margin-top: 40px;
+            font-family: 'Comfortaa', cursive, sans-serif;
+            font-size: 36px;
+        }
+
+        .link-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .bottom-text {
+            margin-top: 50px;
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button lancer" onclick="playSound('lancer-laugh.mp3')">
+        <img src="https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/lancer.png" alt="Lancer">
+    </button>
+
+    <button class="button" onclick="playSound('queen-laugh.mp3')">
+        <img src="https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/queen.png" alt="Hahaha">
+    </button>
+
+    <button class="button" onclick="playSound('gerson-laugh.mp3')">
+        <img src="https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/gerson.png" alt="Gerson">
+    </button>
+
+    <button class="button" onclick="playSound('sanctuary.mp3')">
+        <img src="https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/call.png" alt="Call">
+    </button>
+
+    <div class="footer-text">
+        Крис, жми на фотки!
+    </div>
+
+    <a class="link-button" href="https://t.me/undertalecyann" target="_blank">Телеграм</a>
+    <a class="link-button" href="http://29.ip.gl.ply.gg:62537/" target="_blank">Дельта-тусовка</a>
+
+    <div class="bottom-text">
+        Смотрите новости в телеграм канале.
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script>
+        function playSound(filename) {
+            const audio = document.getElementById('audio-player');
+            audio.src = `https://raw.githubusercontent.com/MootoiMorozik/tobyfox/main/${filename}`;
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
